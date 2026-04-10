@@ -1,0 +1,105 @@
+
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a student's core academic and professional identity.",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "fullName": { "type": "string" },
+        "college": { "type": "string" },
+        "course": { "type": "string" },
+        "semester": { "type": "number" },
+        "cgpa": { "type": "number" },
+        "targetRole": { "type": "string" },
+        "isProfileComplete": { "type": "boolean" },
+        "links": {
+          "type": "object",
+          "properties": {
+            "github": { "type": "string" },
+            "leetcode": { "type": "string" },
+            "linkedin": { "type": "string" }
+          }
+        },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "email", "fullName", "isProfileComplete"]
+    },
+    "CareerIntelligence": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "CareerIntelligence",
+      "type": "object",
+      "properties": {
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "level": { "type": "string", "enum": ["Beginner", "Intermediate", "Advanced"] }
+            }
+          }
+        },
+        "githubData": {
+          "type": "object",
+          "properties": {
+            "username": { "type": "string" },
+            "repoCount": { "type": "number" },
+            "languages": { "type": "array", "items": { "type": "string" } },
+            "stars": { "type": "number" },
+            "lastSynced": { "type": "string", "format": "date-time" }
+          }
+        },
+        "leetcodeData": {
+          "type": "object",
+          "properties": {
+            "username": { "type": "string" },
+            "totalSolved": { "type": "number" },
+            "easy": { "type": "number" },
+            "medium": { "type": "number" },
+            "hard": { "type": "number" },
+            "ranking": { "type": "number" },
+            "lastSynced": { "type": "string", "format": "date-time" }
+          }
+        },
+        "analysis": {
+          "type": "object",
+          "properties": {
+            "skillScores": { "type": "object" },
+            "placementProbability": { "type": "number" },
+            "category": { "type": "string" },
+            "insights": { "type": "object" },
+            "riskLevel": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "auth": {
+    "providers": ["google.com", "password"]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": { "$ref": "#/backend/entities/User" },
+          "description": "Core student profile."
+        }
+      },
+      {
+        "path": "users/{userId}/career_intelligence/data",
+        "definition": {
+          "entityName": "CareerIntelligence",
+          "schema": { "$ref": "#/backend/entities/CareerIntelligence" },
+          "description": "Analysis and integration data."
+        }
+      }
+    ]
+  }
+}

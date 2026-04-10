@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function authenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return authenticated() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return authenticated() && request.auth.token.email == "zenoraa.app@gmail.com";
+    }
+
+    // User profiles and their private data
+    match /users/{userId} {
+      allow get: if authenticated();
+      allow list, create, update, delete: if isOwner(userId);
+
+      match /{allSubcollections=**} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // Notes repository: Anyone can read/create, only author can delete
+    match /notes/{noteId} {
+      allow read: if authenticated();
+      allow create: if authenticated();
+      allow update, delete: if authenticated() && resource.data.uploadedBy == request.auth.uid;
+    }
+
+    // Events: Anyone can read, admin can create, admin or creator can edit/delete
+    match /events/{eventId} {
+      allow read: if authenticated();
+      allow create: if isAdmin();
+      allow update: if authenticated(); 
+      allow delete: if isAdmin() || (authenticated() && resource.data.createdBy == request.auth.uid);
+    }
+
+    // Individual tasks rules
+    match /tasks/{taskId} {
+      allow list: if authenticated() && request.query.limit <= 100;
+      allow read: if authenticated() && (resource == null || resource.data.userId == request.auth.uid);
+      allow create: if authenticated() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if authenticated() && resource.data.userId == request.auth.uid;
+    }
+
+    // Feedback
+    match /feedback/{feedbackId} {
+      allow create: if true;
+    }
+  }
+}

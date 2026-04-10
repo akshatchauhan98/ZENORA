@@ -1,0 +1,40 @@
+{
+  "placeholderImages": [
+    {
+      "id": "academic-help",
+      "description": "An AI assistant providing academic help.",
+      "imageUrl": "https://images.unsplash.com/photo-1759922378123-a1f4f1e39bae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBsZWFybmluZ3xlbnwwfHx8fDE3NjY2NjczMzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "education learning"
+    },
+    {
+      "id": "notes-repository",
+      "description": "A digital repository for notes.",
+      "imageUrl": "https://images.unsplash.com/photo-1674664911988-fae7f6a6c01a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxub3RlYm9vayUyMHN0dWR5fGVufDB8fHx8MTc2NjYyMzA0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "notebook study"
+    },
+    {
+      "id": "planner-reminders",
+      "description": "A digital planner with reminders.",
+      "imageUrl": "https://images.unsplash.com/photo-1632200011588-7c252c8c8fbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYWxlbmRhciUyMHNjaGVkdWxlfGVufDB8fHx8MTc2NjU5Nzc0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "calendar schedule"
+    },
+    {
+      "id": "career-guidance",
+      "description": "AI providing career guidance.",
+      "imageUrl": "https://images.unsplash.com/photo-1763598455759-a2f637478de6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2FyZWVyJTIwcGF0aHxlbnwwfHx8fDE3NjY2NjczMzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "career path"
+    },
+    {
+      "id": "mental-wellbeing",
+      "description": "Resources for mental health and wellbeing.",
+      "imageUrl": "https://images.unsplash.com/photo-1609718561976-d52836e625cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWVkaXRhdGlvbiUyMHBlYWNlfGVufDB8fHx8MTc2NjY1ODQyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "meditation peace"
+    },
+    {
+      "id": "campus-life",
+      "description": "Information about campus life and events.",
+      "imageUrl": "https://images.unsplash.com/photo-1577985043696-8bd54d9f093f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dW5pdmVyc2l0eSUyMGNhbXB1c3xlbnwwfHx8fDE3NjY2NjY3ODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university campus"
+    }
+  ]
+}
