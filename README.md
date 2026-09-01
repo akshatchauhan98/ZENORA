@@ -19,6 +19,16 @@ This project is built with **Next.js 15** and is optimized for the **Next.js** a
 2.  **Build Command**: `npm run build`
 3.  **Output Directory**: `.next`
 4.  **Environment Variables**: Add all variables from your `.env` file.
+## 🏆 Hackathon Achievement
+
+Secured **Rank 6 out of 100+ teams** at the [Insert College Name] Hackathon held in collaboration with **byteXL**.
+
+## 🛠 My Contributions:-
+Since this was a team project, my primary focus was on:
+*   **Frontend UI Development:** Built modern, responsive interfaces using **Next.js 15**, **Tailwind CSS**, and **Shadcn UI** to ensure a high-quality user experience.
+*   **AI Integration:** Assisted in the implementation of **Google Genkit** powered by **Gemini 2.5 Flash**, specifically working on the logic for the AI Academic Assistant.
+*   **Feature Implementation:** Contributed to the development of the **Study Planner** and **Wellbeing Tracker** modules.
+
 
 ## 🛠 Tech Stack
 
